@@ -1,0 +1,35 @@
+<%- include ('partials/header.ejs')%>
+<%- include ('partials/home_navbar.ejs')%>
+
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Bem vindo ao Pindoretamense!</h1>
+              <p class="lead">Blog dedicado a informar e guardar as noticias e história de Pindoretama</p>
+            </div>
+          </div>
+        <% articles.forEach(article=>{ %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title %></h2>
+                </div>
+                <div class="card-body">
+                    <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+                </div>
+            </div>
+            <br>
+        <% }) %>
+
+        <div class="row">
+            <div class="col col-12">
+                <a style="float:right" href="/articles/page/2">Proxima >>></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<%- include ('partials/footer.ejs')%>
